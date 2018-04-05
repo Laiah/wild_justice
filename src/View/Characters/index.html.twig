@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Choose your fighter !</h1>
+    <ul>
+        {% for fighter in fighters %}
+            <li> {{ fighter.name }} </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

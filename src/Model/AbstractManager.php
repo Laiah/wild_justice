@@ -18,7 +18,7 @@ use GuzzleHttp\Client;
 abstract class AbstractManager
 {
     protected $client; //variable de connexion
-    protected $className;
+    protected $queryId;
 
     /**
      *  Initializes Manager Abstract class.
@@ -42,8 +42,10 @@ abstract class AbstractManager
      */
     public function selectAll()
     {
-        return $queryId = $this->client->request('GET', 'id/1.json');
-
+        $queryAll = $this->client->request('GET', 'all.json');
+        $body = $queryAll->getBody();
+        $arrayAll = json_decode($body->getContents(), true);
+        return $arrayAll;
     }
 
     /**
