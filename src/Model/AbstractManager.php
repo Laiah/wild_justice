@@ -57,8 +57,10 @@ abstract class AbstractManager
      */
     public function selectOneById(int $id)
     {
-        // prepared request
-        
+        $queryOneId = $this->client->request('GET', 'id/'. $id . '.json');
+        $body = $queryOneId->getBody();
+        $arrayOneId = json_decode($body->getContents(), true);
+        return $arrayOneId;
     }
 
     /**
@@ -66,9 +68,9 @@ abstract class AbstractManager
      *
      * @param int $id
      */
-    public function delete(int $id)
+    public function selectFiveRandom()
     {
-        //TODO : Implements SQL DELETE request
+        //TODO : requête de 5 perso en random
     }
 
 
