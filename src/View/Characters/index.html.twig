@@ -2,9 +2,15 @@
 
 {% block content %}
     <h1>Choose your fighter !</h1>
-    <ul>
+    <ul class="container d-inline-flex">
         {% for fighter in fighters %}
-            <li> {{ fighter.name }} </li>
+
+            <li class="list-unstyled">
+                <div class="img-thumbnail">
+                    {{ fighter.name }}
+                    <img src="{{ fighter.images.sm }}">
+                </div>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}
