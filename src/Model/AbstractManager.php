@@ -9,16 +9,15 @@
 
 namespace Model;
 
-use App\Connection;
+
+use GuzzleHttp\Client;
 
 /**
  * Abstract class handling default manager.
  */
 abstract class AbstractManager
 {
-    protected $pdoConnection; //variable de connexion
-
-    protected $table;
+    protected $client; //variable de connexion
     protected $className;
 
     /**
@@ -26,12 +25,14 @@ abstract class AbstractManager
      *
      * @param string $table Table name of current model
      */
-    public function __construct(string $table)
+    public function __construct()
     {
-        $connexion = new Connection();
-        $this->pdoConnection = $connexion->getPdoConnection();
-        $this->table = $table;
-        $this->className = __NAMESPACE__ . '\\' . ucfirst($table);
+          $this->client = new Client([
+        // Base URI is used with relative requests
+        'base_uri' => 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/',
+        // You can set any number of default request options.
+        'timeout' => 2.0,
+        ]);
     }
 
     /**
@@ -39,9 +40,10 @@ abstract class AbstractManager
      *
      * @return array
      */
-    public function selectAll(): array
+    public function selectAll()
     {
-        return $this->pdoConnection->query('SELECT * FROM ' . $this->table, \PDO::FETCH_CLASS, $this->className)->fetchAll();
+        return $queryId = $this->client->request('GET', 'id/1.json');
+
     }
 
     /**
@@ -54,12 +56,7 @@ abstract class AbstractManager
     public function selectOneById(int $id)
     {
         // prepared request
-        $statement = $this->pdoConnection->prepare("SELECT * FROM $this->table WHERE id=:id");
-        $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
-        $statement->execute();
-
-        return $statement->fetch();
+        
     }
 
     /**
@@ -92,4 +89,12 @@ abstract class AbstractManager
     {
         //TODO : Implements SQL UPDATE request
     }
+
+    public function connectGuzzle()
+    {
+
+      
+    }
+
+ 
 }

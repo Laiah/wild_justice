@@ -20,3 +20,4 @@ define('APP_CACHE_PATH', __DIR__ . '/../temp/cache/');
 //Controller
 define('APP_CONTROLLER_NAMESPACE', '\Controller\\');
 define('APP_CONTROLLER_SUFFIX', 'Controller');
+/*define('APP_BASE_URI', 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api');*/
