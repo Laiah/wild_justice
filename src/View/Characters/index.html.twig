@@ -1,16 +1,21 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Choose your fighter !</h1>
-    <ul class="container d-inline-flex">
-        {% for fighter in fighters %}
+    <h1 class="text-center my-5">Choose your fighter !</h1>
+    <div class="container">
+        <ul class="d-inline-flex">
+            <div class="row">
+                {% for fighter in fighters %}
+                    <li class="list-unstyled mx-2 col">
+                        <div class="img-thumbnail">
+                            {{ fighter.name }}
+                            <img src="{{ fighter.images.sm }}">
+                            <button name="select" class="btn btn-primary" value="{{ fighter.id }}">Select</button>
+                        </div>
+                    </li>
+                {% endfor %}
+            </div>
+        </ul>
+    </div>
 
-            <li class="list-unstyled">
-                <div class="img-thumbnail">
-                    {{ fighter.name }}
-                    <img src="{{ fighter.images.sm }}">
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
 {% endblock %}

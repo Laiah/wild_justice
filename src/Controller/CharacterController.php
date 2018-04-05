@@ -11,7 +11,7 @@ class CharacterController extends AbstractController
 
         $fighters = [];
         for ($i = 0; $i < 5; $i++) {
-            $fighters[] = $characterManager->selectOneById(rand(1,17));
+            $fighters[] = $characterManager->selectOneById(rand(1,731));
         }
 
         return $this->twig->render('Characters/index.html.twig', ['fighters' => $fighters]);

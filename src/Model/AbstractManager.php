@@ -75,13 +75,16 @@ abstract class AbstractManager
 
 
     /**
-     * INSERT one row in dataase
+     * SELECT Powerstat by id
      *
-     * @param Array $data
+     * @param int $id
      */
-    public function insert(array $data)
+    public function selectPowerstat(int $id)
     {
-        //TODO : Implements SQL INSERT request
+        $queryPowerstat = $this->client->request('GET', 'powerstats/'. $id . '.json');
+        $body = $queryPowerstat->getBody();
+        $arrayOneId = json_decode($body->getContents(), true);
+        return $arrayPowerstat;
     }
 
 
