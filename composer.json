@@ -11,7 +11,7 @@
     "require": {
         "nikic/fast-route": "^1.2",
         "twig/twig": "^2.4",
-	"guzzlehttp/guzzle": "~6.0"
+	    "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "*"
