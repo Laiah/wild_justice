@@ -1,0 +1,25 @@
+.blue {
+	width: 200px;
+	height:400px;
+}
+
+.red {
+	width: 200px;
+	height:400px;
+}
+
+.life {
+	margin-top: 50px;
+	width: 50%;
+}
+
+.playersLife {
+	width: 50%;
+	height: 30px;
+}
+
+.fighters {
+	margin-top: 300px;
+	display: flex;
+	justify-content: space-around;
+}

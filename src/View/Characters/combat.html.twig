@@ -1,5 +1,30 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>FIGHT!!!</h1>
+   <body style="background-image: url(assets/images/boxing-ring.jpg);">
+   	<div class="container ">
+   		<div class="row">
+   			<div class="progress life">
+  				<div class="playersLife progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+  			</div>
+			</div>
+			<div class="progress life">
+  				<div class="playersLife progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+  			</div>
+		</div>
+   		</div>
+   	</div>
+   	<div class="container fighters">
+   		<div class="column">
+   			<div class="d-flex justify-content-between">
+   				<img src="assets/images/blue.jpg" class="blue mx-auto rounded d-flex justify-content-start" alt="...">
+   			</div>
+   		</div>
+   		<div class="column"> 
+   			<div class="d-flex justify-content-between">
+   				<img src="assets/images/red.jpg" class="red mx-auto rounded d-flex justify-content-end" alt="...">
+   			</div>
+   		</div>
+   	</div>
+   </body>
 {% endblock %}
