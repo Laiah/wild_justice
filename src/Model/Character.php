@@ -1,11 +1,4 @@
  <?php
-/**
- * Created by PhpStorm.
- * User: laiah
- * Date: 05/04/18
- * Time: 16:09
- */
-
 namespace Model\Character;
 
 
@@ -13,7 +6,7 @@ class Character
 {
     private $puissance,
             $pv,
-            $vitesse;
+            $vitesse,
             $nom;
 
     /*$player1 = new Character(selectPowerstat($id))      */  
@@ -24,6 +17,12 @@ class Character
         $this->pv = $pv;
         $this->vitesse = $vitesse;
         $this->nom = $nom;
+    }
+
+     public function getInfos()
+    {
+        return $this->puissance . " " .  $this->pv . " " . $this->vitesse . " " . $this->nom;
+    
     }
 
     /**
@@ -73,3 +72,6 @@ class Character
     }*/
 
 }
+
+$perso1 = new Character(getPuissance(), getPv(), getSpeed(), getName());
+$perso1->getInfos();

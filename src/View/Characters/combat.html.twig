@@ -2,25 +2,35 @@
 
 {% block content %}
    <body style="background-image: url(assets/images/boxing-ring.jpg);">
-   	<div class="container ">
-   		<div class="row">
-   			<div class="progress life">
-  				<div class="playersLife progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-  			</div>
-			</div>
-			<div class="progress life">
-  				<div class="playersLife progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-  			</div>
-		</div>
-   		</div>
-   	</div>
-   	<div class="container fighters">
-        {% for image in images %}
+    <div class="container ">
+        <div class="row">
+            <div class="progress life">
+                <div class="playersLife progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+            <div class="progress life">
+                <div class="playersLife progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+        
+    </div>
+    </div>
+    <div class="container fighters">
+        
         <div class="column">
             <div class="d-flex justify-content-between">
+                {% for image in images %}
                 <img src="{{ image }}" class="blue mx-auto rounded d-flex justify-content-start" alt="...">
+                {% endfor %}
+                {% for stat in stats %}
+                    <p>{{ stat.name }}
+                    {{ stat.power }}
+                    {{ stat.durability }}
+                    {{ stat.speed }}
+                </p>
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
+        
    </body>
 {% endblock %}
