@@ -11,10 +11,9 @@
                         <div class="img-thumbnail">
                             {{ fighter.name }}
                             <img src="{{ fighter.images.sm }}">
-                            <input name="select" type ="submit"class="btn btn-primary" value="{{ fighter.id }}">
+                            <input name="select" type ="checkbox"class="btn btn-primary" value="{{ fighter.id }}">
                         </div>
-                        </form>
-                    </li>
+                                           </li>
                 {% endfor %}
             </div>
         </ul>
@@ -25,15 +24,19 @@
             <div class="row">
                 {% for fighter in fighters %}
                     <li class="list-unstyled mx-2 col">
-                        <form method="GET" action="/fight">
+                      
                         <div class="img-thumbnail">
                             {{ fighter.name }}
                             <img src="{{ fighter.images.sm }}">
-                            <input name="select2" type ="submit"class="btn btn-primary" value="{{ fighter.id }}">
+                            <input name="select2" type ="checkbox"class="btn btn-primary" value="{{ fighter.id }}">
                         </div>
-                        </form>
+
+
+                        
                     </li>
                 {% endfor %}
+                <input type="submit" name="envoyer">
+                </form>
             </div>
         </ul>
     </div>

@@ -16,19 +16,20 @@
    	</div>
    	<div class="container fighters">
    		<div class="column">
-   			<div class="d-flex justify-content-between">
-   				<img src="{{ fighters[id_fighter] }}
-                        
-
-
-          " class="blue mx-auto rounded d-flex justify-content-start" alt="...">
+        {% for fighter in fighters %}
+          <div class="d-flex justify-content-between">
+            <img src="{{ fighters[id_fighter] }}" class="blue mx-auto rounded d-flex justify-content-start" alt="...">
+        </div>
+        {% endfor %}
+   			<!--<div class="d-flex justify-content-between">
+   				<img src="{{ fighters[id_fighter] }}" class="blue mx-auto rounded d-flex justify-content-start" alt="...">
    			</div>
    		</div>
    		<div class="column"> 
    			<div class="d-flex justify-content-between">
    				<img src="{{ fighters[id_fighter] }}" class="red mx-auto rounded d-flex justify-content-end" alt="...">
    			</div>
-   		</div>
+   		</div>-->
    	</div>
    </body>
 {% endblock %}

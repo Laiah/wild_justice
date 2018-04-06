@@ -14,12 +14,14 @@ class Character
     private $puissance,
             $pv,
             $vitesse;
+            $nom;
 
-    public function __construct($puissance, $pv, $vitesse)
+    public function __construct($puissance, $pv, $vitesse, $nom)
     {
         $this->puissance = $puissance;
         $this->pv = $pv;
         $this->vitesse = $vitesse;
+        $this->nom = $nom;
     }
 
     /**
@@ -52,6 +54,13 @@ class Character
     public function setPv($pv)
     {
         $this->pv = $pv;
+    }
+
+
+
+    public function baston()
+    {
+
     }
 
 }
