@@ -16,6 +16,8 @@ class Character
             $vitesse;
             $nom;
 
+    /*$player1 = new Character(selectPowerstat($id))      */  
+
     public function __construct($puissance, $pv, $vitesse, $nom)
     {
         $this->puissance = $puissance;
@@ -58,9 +60,16 @@ class Character
 
 
 
-    public function baston()
+  /*  public function baston($player1, $player2)
     {
-
-    }
+       if ($player1->getVitesse() > $player2->getVitesse()) 
+       {
+           echo 'Player 1 atck';
+       }
+       elseif ($player2->getVitesse() > $player1->getVitesse()) 
+       {
+           
+       }
+    }*/
 
 }
