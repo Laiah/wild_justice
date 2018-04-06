@@ -30,8 +30,6 @@ class CharacterController extends AbstractController
             $stats[$key]['durability'] = $value['powerstats']['durability'];
             $stats[$key]['speed'] = $value['powerstats']['speed'];
             $images[] = $value['images']['lg'];
-            
-            
         }
        
         return $this->twig->render('Characters/combat.html.twig', ['stats' => $stats, 'images' => $images]);
