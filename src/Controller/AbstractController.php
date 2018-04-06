@@ -15,6 +15,7 @@ use Twig_Environment;
 /**
  *
  */
+
 abstract class AbstractController
 {
     protected $twig;

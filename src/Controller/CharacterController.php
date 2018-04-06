@@ -11,10 +11,31 @@ class CharacterController extends AbstractController
 
         $fighters = [];
         for ($i = 0; $i < 5; $i++) {
-            $fighters[] = $characterManager->selectOneById(rand(1,731));
+            $fighters[] = $characterManager->selectOneById(rand(1,8));
         }
 
         return $this->twig->render('Characters/index.html.twig', ['fighters' => $fighters]);
     }
 
+
+    public function combat()
+    {
+        $characterManager = new CharacterManager();
+        $fighters = $characterManager->selectAll();
+
+        $id_fighter = $_GET['select'];
+        $imgs = [];
+        foreach ($fighters as $f) {
+            $imgs[] = $f['images']['lg'];
+// var_dump($f['images']);
+        }
+        return $this->twig->render('Characters/combat.html.twig', ['fighters' => $imgs,
+                                                                    'id_fighter'=> $id_fighter ]);
+
+
+    }
+
+
+   
 }
+

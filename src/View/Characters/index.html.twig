@@ -2,16 +2,36 @@
 
 {% block content %}
     <h1 class="text-center my-5">Choose your fighter !</h1>
-    <div class="container">
+    <div class="container one">
         <ul class="d-inline-flex">
             <div class="row">
                 {% for fighter in fighters %}
                     <li class="list-unstyled mx-2 col">
+                        <form method="GET" action="/fight">
                         <div class="img-thumbnail">
                             {{ fighter.name }}
                             <img src="{{ fighter.images.sm }}">
-                            <button name="select" class="btn btn-primary" value="{{ fighter.id }}">Select</button>
+                            <input name="select" type ="submit"class="btn btn-primary" value="{{ fighter.id }}">
                         </div>
+                        </form>
+                    </li>
+                {% endfor %}
+            </div>
+        </ul>
+    </div>
+
+    <div class="container two">
+        <ul class="d-inline-flex">
+            <div class="row">
+                {% for fighter in fighters %}
+                    <li class="list-unstyled mx-2 col">
+                        <form method="GET" action="/fight">
+                        <div class="img-thumbnail">
+                            {{ fighter.name }}
+                            <img src="{{ fighter.images.sm }}">
+                            <input name="select2" type ="submit"class="btn btn-primary" value="{{ fighter.id }}">
+                        </div>
+                        </form>
                     </li>
                 {% endfor %}
             </div>
