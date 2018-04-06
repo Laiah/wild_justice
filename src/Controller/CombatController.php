@@ -4,8 +4,14 @@ namespace Controller;
 
 use Model\Character;
 
+/**
+* 
+*/
 class CombatController extends Character
-
 {
-	private ;
+	
+	function __construct(argument)
+	{
+		# code...
+	}
 }

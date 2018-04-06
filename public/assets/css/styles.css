@@ -1,25 +1,116 @@
-.blue {
-	width: 200px;
-	height:400px;
-}
 
-.red {
-	width: 200px;
-	height:400px;
-}
 
-.life {
-	margin-top: 50px;
-	width: 50%;
-}
-
-.playersLife {
-	width: 50%;
-	height: 30px;
-}
 
 .fighters {
-	margin-top: 300px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
+	align-items: center;
+}
+
+.selectedFighters {
+	justify-content: center;
+	margin: 50px;
+}
+
+.lifeBars {
+	display: flex;
+	justify-content: center;
+	background-color: black;
+	border-radius: 13px; /* (height of inner div) / 2 + padding */
+	padding: 3px;
+}
+
+.lifeBars > div {
+   background-color: orange;
+   width: 40%; /* Adjust with JavaScript */
+   height: 20px;
+   border-radius: 10px;
+}.one {
+	margin: 20px;
+}
+
+.boom {
+	display: flex;
+	justify-content: center;
+	color: red;
+}
+
+/* Animation -------------------- */
+
+@keyframes ballbounce {
+	/* up */
+	0% {
+		top:-30%;
+		animation-timing-function: ease-in;
+	}
+	/* floor */
+	30% {
+		top:80%;
+		animation-timing-function: ease-out;
+	}
+	/* up */
+	40% {
+		top: 20%;
+	}
+	/* up */
+	45% {
+		top:17%;
+		animation-timing-function: ease-in;
+	}
+	/* floor */
+	60% {
+		top:80%;
+		animation-timing-function: ease-out;
+	}
+	/* up */
+	75% {
+		top:30%;
+	}
+	90% {
+		top:25%;
+		animation-timing-function: ease-in;
+	}
+	/* floor */
+	100% {
+		top:110%;
+		animation-timing-function:ease-out;
+	}
+}
+
+
+
+
+
+
+/* Ball -------------------- */
+.ball {
+	width:5rem;
+	height:5rem;
+	/*left:50%;*/
+	position:absolute;
+	z-index:1;
+	/*margin-left:-2.5rem;*/
+	animation:ballbounce 4s 1s infinite;
+	animation-fill-mode:both;
+}
+
+/* Animation containers -------------------- */
+.animation {
+	justify-content: center;
+	margin-top: 85px;
+	height:300px;
+	width:200px;
+	position:relative;
+	z-index:1;
+}
+
+.ball {
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+	width:200px;
+}
+
+.fight {
+	display: flex;
+	justify-content: center;
 }
