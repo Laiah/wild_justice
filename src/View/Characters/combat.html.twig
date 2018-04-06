@@ -1,13 +1,15 @@
+
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-   <body style="background-image: url(assets/images/boxing-ring.jpg); background-repeat: no-repeat;">
-    <div class="container"> 
-   	<div class="row lifeBars">
+   <body style="background-image: url(assets/images/bgCombat.gif); background-repeat: no-repeat; background-size: 100% 1000px;">
+    <div class="container reloud"> 
+    <div class="row lifeBars">
       <div class="one"></div>
       <div class="one"></div>
     </div>
     </div>
+        
     <div class="container fight">
       <div class="row">
         <div class="animation">
@@ -16,13 +18,105 @@
         </div>
     </div>
     </div>
-   	<div class="container fighters">
-   		<div class="row">
-        {% for fighter in fighters %}
-          <div class="selectedFighters">
-            <img src="{{ fighters[id_fighter] }}" class="blue rounded" alt="..." style="width: 250px; height: 300px;">
+    <div class="container fighters">
+        <div class="row">
+            <div class="">
+                {% for image in images %}
+                <img class="boby" src="{{ image }}" class="blue rounded" alt="..." style="width:2O0px; height:250px;">
+                {% endfor %}
+            </div>
         </div>
-        {% endfor %}
-   	</div>
+    </div>
+
+    <div class="container">
+    <div class="row"> 
+        <div class="col">
+            <p>Attaques joueur 1:</p>
+            <button name="brulureP1" type="button" data-toggle="modal" data-target="#brulureP1">Brulure indienne</button>
+            <div id="brulureP1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="brulureP1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Le joueur 2 a perdu 3pv</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button name="balayetteP1" type="button" data-toggle="modal" data-target="#balayetteP1">Balayette</button>
+            <div id="balayetteP1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="balayetteP1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Le joueur 2 a perdu 5pv</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button name="coupteteP1" type="button" data-toggle="modal" data-target="#coupteteP1">Coup de tête</button>
+            <div id="coupteteP1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="coupteteP1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Le joueur 2 a perdu 7pv</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button name="koP1" type="button" data-toggle="modal" data-target="#koP1">KO</button>
+            <div id="koP1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="koP1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Le joueur 2 est KO !!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="justify-content-end">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attaques joueur 2:</p>
+            <button name="brulureP2" type="button" data-toggle="modal" data-target="#brulureP2">Brulure indienne</button>
+            <div id="brulureP2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="brulureP2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Le joueur 1 a perdu 3pv</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button name="balayetteP2" type="button" data-toggle="modal" data-target="#balayetteP2">Balayette</button>
+            <div id="balayetteP2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="balayetteP1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Le joueur 1 a perdu 5pv</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button name="coupteteP2" type="button" data-toggle="modal" data-target="#coupteteP2">Coup de tête</button>
+            <div id="coupteteP2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="coupteteP1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Le joueur 1 a perdu 7pv</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button name="koP2" type="button" data-toggle="modal" data-target="#koP2">KO</button>
+            <div id="koP2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="koP2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Le joueur 1 est KO !!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>   
    </body>
 {% endblock %}

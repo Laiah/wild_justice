@@ -63,14 +63,32 @@ abstract class AbstractManager
         return $arrayOneId;
     }
 
-    /**
-     * DELETE on row in dataase by ID
-     *
-     * @param int $id
-     */
-    public function selectFiveRandom()
+    public function getPuissance()
     {
-        //TODO : requête de 5 perso en random
+        $puissance = selectOneById($_GET['select'])['power'];
+        return $puissance;
+        
+    }
+
+    public function getPv()
+    {
+        $pv = selectOneById($_GET['select'])['durability'];
+        return $pv;
+        
+    }
+
+    public function getSpeed()
+    {
+        $speed = selectOneById($_GET['select'])['speed'];
+        return $speed;
+        
+    }
+
+    public function getName()
+    {
+        $nom = selectOneById($_GET['select'])['name'];
+        return $nom;
+        
     }
 
 
@@ -97,11 +115,5 @@ abstract class AbstractManager
         //TODO : Implements SQL UPDATE request
     }
 
-    public function connectGuzzle()
-    {
-
-      
-    }
-
- 
 }
+

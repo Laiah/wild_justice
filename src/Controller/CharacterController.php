@@ -21,20 +21,21 @@ class CharacterController extends AbstractController
     public function combat()
     {
         $characterManager = new CharacterManager();
-        $fighters[] = $characterManager->selectOneById($_GET['select']);
-        $fighters[] = $characterManager->selectOneById($_GET['select2']);
 
-        $id_fighter = $_GET['select'];
-        $imgs = [];
-        foreach ($fighters as $f) {
-            $imgs[] = $f['images']['lg'];
-// var_dump($f['images']);
+        $chooseFighters[0] = $characterManager->selectOneById($_GET['select']);
+        $chooseFighters[1] = $characterManager->selectOneById($_GET['select2']);
+         foreach ($chooseFighters as $key=> $value) {
+            $stats[$key]['name'] = $value['name'];
+            $stats[$key]['power'] = $value['powerstats']['power'];
+            $stats[$key]['durability'] = $value['powerstats']['durability'];
+            $stats[$key]['speed'] = $value['powerstats']['speed'];
+            $images[] = $value['images']['lg'];
         }
-        return $this->twig->render('Characters/combat.html.twig', ['fighters' => $imgs,
-                                                                    'id_fighter'=> $id_fighter ]);
+       
+        return $this->twig->render('Characters/combat.html.twig', ['stats' => $stats, 'images' => $images]);
     }
 
 
-   
+ 
 }
 

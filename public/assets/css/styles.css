@@ -29,10 +29,8 @@
 	margin: 20px;
 }
 
-.boom {
-	display: flex;
-	justify-content: center;
-	color: red;
+.boby {
+	margin: 50px;
 }
 
 /* Animation -------------------- */
@@ -97,7 +95,7 @@
 /* Animation containers -------------------- */
 .animation {
 	justify-content: center;
-	margin-top: 85px;
+	margin-top: 65px;
 	height:300px;
 	width:200px;
 	position:relative;
@@ -113,4 +111,30 @@
 .fight {
 	display: flex;
 	justify-content: center;
+}
+
+.reloud {
+	height: 10px;
+}
+
+.reloud2 {
+	height: 50px;
+}
+
+p {
+	font-weight: bold;
+	font-size: 2em;
+	color:orange;
+}
+
+.bout {
+	margin-left: 510px;
+	margin-top: 85px;
+	display: flex;
+	justify-content: center;
+}
+
+.choose {
+	color: orange;
+	font-weight: bold;
 }

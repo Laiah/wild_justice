@@ -1,8 +1,9 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1 class="text-center my-5">Choose your fighter !</h1>
-    <div class="container one">
+    <body style="background-image: url(assets/images/bgPeople.gif); background-repeat: no-repeat; background-size: 100% 1000px;"> 
+    <h1 class="text-center my-5 choose">Choose your fighter !</h1>
+    <div class="container column">
         <ul class="d-inline-flex">
             <div class="row">
                 {% for fighter in fighters %}
@@ -35,10 +36,13 @@
                         
                     </li>
                 {% endfor %}
-                <input type="submit" name="envoyer">
+                <div class="bout"> 
+                <input class="btn-warning" type="submit" name="envoyer">
+                </div>
                 </form>
             </div>
         </ul>
     </div>
+    </body>
 
 {% endblock %}
